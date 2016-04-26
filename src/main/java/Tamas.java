@@ -1,29 +1,71 @@
 
 public class Tamas {
   private String mDescription;
+  public static final int MAX_HEALTH = 10;
+  public static final int MAX_FOOD = 10;
+  public static final int MAX_MOOD = 10;
+  public static final int MAX_ENERGY = 10;
+  private boolean mAlive;
+  private int mHealth;
+  private int mFood;
+  private int mMood;
+  private int mEnergy;
+  private int mTime;
 
   public Tamas(String description) {
     mDescription = description;
-
+    mAlive = true;
+    mFood = MAX_FOOD;
+    mMood = MAX_MOOD;
+    mEnergy = MAX_ENERGY;
+    mHealth = MAX_HEALTH;
   }
   public String getDescription() {
     return mDescription;
   }
+  public int getHealth() {
+    return mHealth;
+  }
+  public int getFood() {
+    return mFood;
+  }
+  public int getMood() {
+    return mMood;
+  }
+  public int getEnergy() {
+    return mEnergy;
+  }
 
-//   public class Tamagotchi {
-//   public static final int MAX_BARS = 8;
-//   private boolean mAlive;
-//   private int mHunger;
-//   private int mHappiness;
-//   private int mSleepiness;
-//
-//   public Tamagotchi(String color) {
-//     mColor = color;
-//     mBarsCount = 0;
+  public void timePasses() {
+    mFood --;
+    mMood --;
+    mEnergy --;
+    if (mFood + mMood + mEnergy <= 10) {
+      mHealth -= 1;
+    }
+  }
+
+  
+
+
+  // public boolean isAlive() {
+  //   return mAlive == 0;
+  // }
+  // public void load(); {
+  //   load(MAX_HEALTH);
+  // }
+  // public void load(int life); {
+  //   mHealth += life;
+  // }
+
+
+//   public setHunger(String hunger) {
+//     mHunger = hunger;
+//     return mHunger;
 //   }
 //
-//   public String getColor() {
-//     return mColor;
+//   public setHappiness(String happiness) {
+//     mHappiness = happiness;
 //   }
 //
 //   public void drive() {

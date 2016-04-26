@@ -41,13 +41,16 @@ public class TamasTest {
     assertEquals(9, myTama.getMood());
     assertEquals(9, myTama.getEnergy());
   }
-  
-  //
-  // @Test
-  // public void isAlive_foodLevelAbove0_true() {
-  //   Tamagotchi myPet = new Tamagotchi("lil dragon");
-  //   assertEquals(true, myPet.isAlive());
-  // }
+
+
+  @Test
+  public void isAlive_HealthFoodMoodEnergy_Above0() {
+    Tamas myTama = new Tamas("Rover");
+    for (int i = 10; i > 0; i++) {
+      myTama.timePasses();
+    }
+    assertEquals(false, myTama.isAlive());
+  }
   //
   // @Test
   // public void isAlive_foodBelow1_false() {

@@ -43,9 +43,30 @@ public class Tamas {
     if (mFood + mMood + mEnergy <= 10) {
       mHealth -= 1;
     }
+    if (mFood == 0 || mMood == 0 || mEnergy == 0 || mHealth == 0) {
+      mAlive = false;
+    }
   }
 
-  
+  public boolean isAlive() {
+    return mAlive;
+  }
+
+  public void healTama() {
+    mHealth ++;
+  }
+
+  public void feedTama() {
+    mFood ++;
+  }
+
+  public void petTama() {
+    mMood ++;
+  }
+
+  public void sleepTama() {
+    mEnergy ++;
+  }
 
 
   // public boolean isAlive() {

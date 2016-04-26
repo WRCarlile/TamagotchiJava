@@ -46,17 +46,38 @@ public class TamasTest {
   @Test
   public void isAlive_HealthFoodMoodEnergy_Above0() {
     Tamas myTama = new Tamas("Rover");
-    for (int i = 10; i > 0; i++) {
+    for (int i = 10; i > 0; i--) {
       myTama.timePasses();
     }
     assertEquals(false, myTama.isAlive());
   }
-  //
-  // @Test
-  // public void isAlive_foodBelow1_false() {
-  //   Tamagotchi myPet = new Tamagotchi("lil dragon");
-  //   myPet.setFoodLevel() // make a method that will change the food level of your Tamagotchi
-  //   assertEquals(false, myPet.isAlive());
-  // }
 
+  @Test
+  public void DecreaseAndIncreaseAllStatsExceptHealth() {
+    Tamas myTama = new Tamas("Rover");
+    for (int i = 5; i > 0; i--) {
+      myTama.timePasses();
+    }
+    myTama.healTama();
+    myTama.feedTama();
+    myTama.petTama();
+    myTama.sleepTama();
+    assertEquals(10, myTama.getHealth());
+    assertEquals(6, myTama.getFood());
+    assertEquals(6, myTama.getMood());
+    assertEquals(6, myTama.getEnergy());
+  }
+
+  @Test
+  public void DecreaseAndIncreaseHealth() {
+    Tamas myTama = new Tamas("Rover");
+    for (int i = 9; i > 0; i--) {
+      myTama.timePasses();
+    }
+    myTama.healTama();
+    assertEquals(8, myTama.getHealth());
+    assertEquals(1, myTama.getFood());
+    assertEquals(1, myTama.getMood());
+    assertEquals(1, myTama.getEnergy());
+  }
 }

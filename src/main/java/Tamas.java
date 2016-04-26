@@ -53,65 +53,35 @@ public class Tamas {
   }
 
   public void healTama() {
-    mHealth ++;
+    if (mHealth < MAX_HEALTH) {
+      mHealth ++;
+    } else {
+      System.out.println("Health Full");
+    }
   }
 
   public void feedTama() {
-    mFood ++;
+    if (mFood < MAX_FOOD) {
+      mFood ++;
+    } else {
+      System.out.println("Food Full");
+    }
   }
 
   public void petTama() {
-    mMood ++;
+    if (mMood < MAX_MOOD) {
+      mMood ++;
+    } else {
+      System.out.println("Mood Full");
+    }
   }
 
   public void sleepTama() {
-    mEnergy ++;
+    if (mEnergy < MAX_ENERGY) {
+      mEnergy ++;
+    } else {
+      System.out.println("Energy Full");
+    }
   }
-
-
-  // public boolean isAlive() {
-  //   return mAlive == 0;
-  // }
-  // public void load(); {
-  //   load(MAX_HEALTH);
-  // }
-  // public void load(int life); {
-  //   mHealth += life;
-  // }
-
-
-//   public setHunger(String hunger) {
-//     mHunger = hunger;
-//     return mHunger;
-//   }
-//
-//   public setHappiness(String happiness) {
-//     mHappiness = happiness;
-//   }
-//
-//   public void drive() {
-//     drive(1);
-//   }
-//
-//   public void drive(int laps) {
-//     // Other driving code omitted for clarity purposes
-//     mBarsCount -= laps;
-//   }
-//
-//   public void charge() {
-//     while (!isFullyCharged()) {
-//       mBarsCount++;
-//     }
-//   }
-//
-//   public boolean isBatteryEmpty() {
-//     return mBarsCount == 0;
-//   }
-//
-//   public boolean isFullyCharged() {
-//     return mBarsCount == MAX_BARS;
-//   }
-//
-// }
 
 }

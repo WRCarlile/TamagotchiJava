@@ -1,5 +1,22 @@
-<h1>Success!</h1>
+<div class="jumbotron">
+  <h1>My Tamagotchi</h1>
+</div>
+<div class="container">
 
-Your tama has been saved.
+  <form action='/food' method='post'>
+    <button type="submit" class="btn btn-info">Feed pet (+Food)</button>
+  </form><br>
 
-<a href="/">Go Back</a>
+  <form action='/mood' method='post'>
+    <button type="submit" class="btn btn-info">Play with per (+Mood)</button>
+  </form><br>
+
+  <form action='/energy' method='post'>
+    <button type="submit" class="btn btn-info">Put to sleep (+Energy)</button>
+  </form><br>
+
+  <form action='/time' method='post'>
+    <button type="submit" class="btn btn-info">Wait (+Time)</button>
+  </form><br>
+
+</div>

@@ -1,0 +1,36 @@
+<div class="jumbotron">
+  <h1>Tamas You've Been</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h3>Add a new tama:</h3><br>
+        <form action='/tamas' method='post'>
+
+          <div class="form-group">
+            <label for="description">Tama description</label>
+            <input id="description" name="description" type="text">
+          </div>
+
+          <button type="submit" class="btn btn-info">Add tama</button>
+        </form><br>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h3>Tamas</h3>
+        <p></p>
+        #if ($tamas)
+        <ul>
+          #foreach ($tama in $tamas)
+          <li>$tama.getDescription()</li>
+          #end
+        </ul>
+        #else
+          <p>No Tamas Added!</p>
+        #end
+      </div>
+    </div>
+  </div>
+</div>
